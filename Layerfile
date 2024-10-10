@@ -18,5 +18,5 @@ RUN apt-get update && \
 COPY . .
 
 RUN docker build -t image .
-RUN docker run -d -p 3000:8080 -e OPENAI_API_KEY=your_secret_key -v open-webui:/app/backend/data --name open-webui -e DATABASE_URL=postgresql://postgres.lymebtvsopgueowkidmt:0MzBcvNo8FZUw3Qv@aws-0-ca-central-1.pooler.supabase.com:6543/postgres --restart always ghcr.io/open-webui/open-webui:main
+RUN docker run -d -p 3000:8080 -e OPENAI_API_KEY=your_secret_key -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 EXPOSE WEBSITE http://localhost:3000
